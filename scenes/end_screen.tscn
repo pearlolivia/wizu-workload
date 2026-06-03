@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6we3oo8vkiww"]
+[gd_scene load_steps=5 format=3 uid="uid://b6we3oo8vkiww"]
 
 [ext_resource type="FontFile" uid="uid://bj4hibuj47l47" path="res://assets/ui/Battlenet.ttf" id="1_orlge"]
+[ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_veekb"]
+[ext_resource type="Texture2D" uid="uid://caf7qkyb15057" path="res://assets/ui/yellow_button.png" id="2_obxg7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gk834"]
+texture = ExtResource("2_obxg7")
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_veekb")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -12,15 +18,15 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.0745098, 0.45098, 0.505882, 1)
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
+[node name="Title" type="ColorRect" parent="Background"]
 layout_mode = 0
 offset_left = 360.0
-offset_top = 159.0
+offset_top = 112.0
 offset_right = 765.0
-offset_bottom = 229.0
+offset_bottom = 182.0
 color = Color(0.0962047, 0.0962048, 0.0962047, 1)
 
-[node name="Label" type="Label" parent="Background/ColorRect"]
+[node name="Label" type="Label" parent="Background/Title"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,26 +43,128 @@ theme_override_fonts/font = ExtResource("1_orlge")
 theme_override_font_sizes/font_size = 72
 text = "RESULTS"
 
-[node name="ColorRect2" type="ColorRect" parent="Background"]
+[node name="Results" type="ColorRect" parent="Background"]
 offset_left = 359.0
-offset_top = 254.0
+offset_top = 212.0
 offset_right = 769.0
-offset_bottom = 522.0
+offset_bottom = 480.0
 color = Color(0.0962047, 0.0962048, 0.0962047, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/ColorRect2"]
+[node name="Income" type="HBoxContainer" parent="Background/Results"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 29.0
+offset_top = 19.0
+offset_right = 388.0
+offset_bottom = 68.0
+theme_override_constants/separation = 70
+alignment = 1
 
-[node name="Label" type="Label" parent="Background/ColorRect2/HBoxContainer"]
+[node name="Label" type="Label" parent="Background/Results/Income"]
 layout_mode = 2
+size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("1_orlge")
 theme_override_font_sizes/font_size = 56
-text = "RESULTS"
+text = "INCOME"
 
-[node name="Label2" type="Label" parent="Background/ColorRect2/HBoxContainer"]
+[node name="Label2" type="Label" parent="Background/Results/Income"]
 layout_mode = 2
+size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("1_orlge")
 theme_override_font_sizes/font_size = 56
-text = "RESULTS"
+text = "999"
+horizontal_alignment = 2
+
+[node name="Tax" type="HBoxContainer" parent="Background/Results"]
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 391.0
+offset_bottom = 121.0
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="Label" type="Label" parent="Background/Results/Tax"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_orlge")
+theme_override_font_sizes/font_size = 56
+text = "TAX"
+
+[node name="Label2" type="Label" parent="Background/Results/Tax"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_orlge")
+theme_override_font_sizes/font_size = 56
+text = "999"
+horizontal_alignment = 2
+
+[node name="Pension" type="HBoxContainer" parent="Background/Results"]
+offset_left = 33.0
+offset_top = 122.0
+offset_right = 392.0
+offset_bottom = 171.0
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="Label" type="Label" parent="Background/Results/Pension"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_orlge")
+theme_override_font_sizes/font_size = 56
+text = "PENSION"
+
+[node name="Label2" type="Label" parent="Background/Results/Pension"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_orlge")
+theme_override_font_sizes/font_size = 56
+text = "999"
+horizontal_alignment = 2
+
+[node name="Net" type="HBoxContainer" parent="Background/Results"]
+offset_left = 34.0
+offset_top = 194.0
+offset_right = 393.0
+offset_bottom = 243.0
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="Label" type="Label" parent="Background/Results/Net"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("1_orlge")
+theme_override_font_sizes/font_size = 56
+text = "NET"
+
+[node name="Label2" type="Label" parent="Background/Results/Net"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_orlge")
+theme_override_font_sizes/font_size = 56
+text = "999"
+horizontal_alignment = 2
+
+[node name="ColorRect3" type="ColorRect" parent="Background/Results"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = 54.0
+offset_right = 186.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 517.0
+offset_right = 661.0
+offset_bottom = 578.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_orlge")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxTexture_gk834")
+text = "Restart"
