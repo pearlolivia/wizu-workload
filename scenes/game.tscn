@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://7coc0x4jxc7"]
+[gd_scene load_steps=24 format=4 uid="uid://7coc0x4jxc7"]
 
 [ext_resource type="Texture2D" uid="uid://cbb4bj2bq8aph" path="res://assets/office/Room_Builder_Office_16x16.png" id="1_86ibt"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_dv7k1"]
 [ext_resource type="Texture2D" uid="uid://c6ju4faoh7vur" path="res://assets/office/Modern_Office_Black_Shadow.png" id="2_hh1i3"]
 [ext_resource type="PackedScene" uid="uid://d2miiv4xmjir8" path="res://scenes/chair.tscn" id="3_mou70"]
 [ext_resource type="PackedScene" uid="uid://c6uchwou3fvvk" path="res://scenes/player.tscn" id="3_rby7s"]
@@ -4263,6 +4264,7 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_esfto")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_dv7k1")
 
 [node name="Map" type="Node2D" parent="."]
 
@@ -4285,6 +4287,14 @@ offset_left = -89.0
 offset_top = -107.0
 offset_right = -89.0
 offset_bottom = -107.0
+
+[node name="Desktop" parent="Player" instance=ExtResource("6_mvkdt")]
+visible = false
+z_index = 0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
@@ -4315,9 +4325,5 @@ tile_set = SubResource("TileSet_3s2v1")
 tile_map_data = PackedByteArray("AAABAAkAAAABAAgAAAABAAoAAAABAAkAAAAEAAkAAAABAAgAAAAEAAoAAAABAAkAAAAKAAIAAAAOAA0AAAAJAAIAAAANAA0AAAALAAIAAAAPAA0AAAAAAAkAAAAMAC8AAAAAAAoAAAAMADAAAAAIAAcAAAAFAAgAAAAJAAkAAAAPAA8AAAAKAAkAAAAOAAgAAAAMAAUAAAAEAAgAAAAMAAgAAAAEAAgAAAAJAAoAAAAPABAAAAAKAAoAAAAOAAkAAAAMAAYAAAAEAAkAAAAMAAkAAAAEAAkAAAA=")
 tile_set = SubResource("TileSet_0mup8")
 
-[node name="Desktop" parent="." instance=ExtResource("6_mvkdt")]
-z_index = 0
-offset_left = -98.0
-offset_top = -12.0
-offset_right = 286.0
-offset_bottom = 204.0
+[connection signal="pause_work" from="Player" to="." method="_on_player_pause_work"]
+[connection signal="start_work" from="Player" to="." method="_on_player_start_work"]

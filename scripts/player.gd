@@ -7,11 +7,13 @@ var character = 'manu'
 var is_sitting := false
 
 var chair
+signal start_work()
+signal pause_work()
 
 func _ready() -> void:
 	chair = get_parent().find_child('Chair')
-	chair.player_sit.connect(sit_animation)
-	chair.player_get_up.connect(stand_animation)
+	chair.player_sit.connect(sit)
+	chair.player_get_up.connect(stand)
 	
 func _physics_process(_delta):
 	# keyboard input
@@ -53,11 +55,13 @@ func _physics_process(_delta):
 			$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play("idle_right")
 
-func sit_animation():
+func sit():
 	is_sitting = true
 	self.position = chair.position
+	start_work.emit()
 
-func stand_animation():
+func stand():
 	is_sitting = false
 	self.position.x = chair.position.x + 10
 	self.position.y = chair.position.y - 10
+	pause_work.emit()

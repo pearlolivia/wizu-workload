@@ -10,17 +10,17 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	print(wallet.total)
+#func _process(delta: float) -> void:
+	#print(wallet.total)
 
 func _on_animation_finished() -> void:
 	# delete self from scene
 	self.remove_from_group('bugs')
 	queue_free()
 
-
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (event is InputEventMouseButton and event.pressed):
+		Global.SQUASHED_BUGS += 1
 		$AnimatedSprite2D.play("die")
 		wallet.add(task.price)
 		player_energy.delete(task.energy)

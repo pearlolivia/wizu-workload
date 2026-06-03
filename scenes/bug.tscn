@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gw1qc"]
-radius = 4.12311
+radius = 8.0
 
 [node name="Bug" type="Area2D"]
 collision_layer = 15
@@ -51,6 +51,7 @@ collision_mask = 23
 script = ExtResource("1_6k3o4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g215b")
 animation = &"die"
 

@@ -1,7 +1,7 @@
 extends Node2D
 
 var rng := RandomNumberGenerator.new()
-var offset = 150
+var offset = 170
 
 @onready var bug_scene = preload("res://scenes/bug.tscn")
 
@@ -22,6 +22,6 @@ func spawn_bug():
 	#print(get_tree().get_nodes_in_group('bugs').size())
 	
 func _on_timer_timeout() -> void:
-	var new_timeout = rng.randi_range(2, 5)
+	var new_timeout = rng.randi_range(3, 6)
 	$Timer.wait_time = new_timeout
 	spawn_bug()

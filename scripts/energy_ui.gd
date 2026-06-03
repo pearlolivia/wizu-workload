@@ -12,10 +12,6 @@ func _process(delta: float) -> void:
 	energy_left = $Timer.time_left
 	$ProgressBar.value = energy_left
 	energy.set_value(energy_left)
-	
-	#if (Input.is_action_just_pressed("test")):
-		#energy.add(5)
-	#print('energy_left: ', energy.value)
 
 func update_energy():
 	# realign Timer with new energy value
