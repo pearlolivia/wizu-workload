@@ -4325,5 +4325,8 @@ tile_set = SubResource("TileSet_3s2v1")
 tile_map_data = PackedByteArray("AAABAAkAAAABAAgAAAABAAoAAAABAAkAAAAEAAkAAAABAAgAAAAEAAoAAAABAAkAAAAKAAIAAAAOAA0AAAAJAAIAAAANAA0AAAALAAIAAAAPAA0AAAAAAAkAAAAMAC8AAAAAAAoAAAAMADAAAAAIAAcAAAAFAAgAAAAJAAkAAAAPAA8AAAAKAAkAAAAOAAgAAAAMAAUAAAAEAAgAAAAMAAgAAAAEAAgAAAAJAAoAAAAPABAAAAAKAAoAAAAOAAkAAAAMAAYAAAAEAAkAAAAMAAkAAAAEAAkAAAA=")
 tile_set = SubResource("TileSet_0mup8")
 
+[node name="ShiftTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="pause_work" from="Player" to="." method="_on_player_pause_work"]
 [connection signal="start_work" from="Player" to="." method="_on_player_start_work"]

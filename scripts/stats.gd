@@ -31,12 +31,13 @@ func _process(delta: float) -> void:
 		$ProgressBar.value = compile_time_left
 
 func _on_run_button_pressed() -> void:
-	if (outstanding_bugs == 0):
-		$Timer.start(3.5)
-	else:
-		$Error.visible = true
-		await get_tree().create_timer(1).timeout
-		$Error.visible = false
+	if ($Timer.is_stopped()):
+		if (outstanding_bugs == 0):
+			$Timer.start(3.5)
+		else:
+			$Error.visible = true
+			await get_tree().create_timer(1).timeout
+			$Error.visible = false
 
 func _on_timer_timeout() -> void:
 	$Success.visible = true
