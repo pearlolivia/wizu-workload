@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Wage" load_steps=2 format=3 uid="uid://bvind0rqlat35"]
+
+[ext_resource type="Script" path="res://resources/wage.gd" id="1_ijt0u"]
+
+[resource]
+script = ExtResource("1_ijt0u")
+total = 0

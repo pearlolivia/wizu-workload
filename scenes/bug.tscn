@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://d323nbq0asab2"]
+
+[ext_resource type="Script" path="res://scripts/bug.gd" id="1_6k3o4"]
+[ext_resource type="Texture2D" uid="uid://d2qarjvbonxjp" path="res://assets/gameplay/Cicada.png" id="1_81hlu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt4gj"]
+atlas = ExtResource("1_81hlu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afwxi"]
+atlas = ExtResource("1_81hlu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swyit"]
+atlas = ExtResource("1_81hlu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu5nd"]
+atlas = ExtResource("1_81hlu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g215b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt4gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afwxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swyit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu5nd")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"die",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gw1qc"]
+radius = 4.12311
+
+[node name="Bug" type="Area2D"]
+collision_layer = 15
+collision_mask = 23
+script = ExtResource("1_6k3o4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g215b")
+animation = &"die"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gw1qc")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]

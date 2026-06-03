@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://bmy5s2b6ikha4"]
+
+[ext_resource type="Script" path="res://resources/tasks/task.gd" id="1_0mm6v"]
+
+[resource]
+script = ExtResource("1_0mm6v")
+name = "squash_bug"
+energy = 2
+price = 1

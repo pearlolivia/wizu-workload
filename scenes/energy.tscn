@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1awk3ff42vdw"]
+
+[ext_resource type="Script" path="res://scripts/energy_ui.gd" id="1_p0goc"]
+[ext_resource type="Texture2D" uid="uid://dflkmapgmcb50" path="res://assets/ui/energy_icon.png" id="2_nilqv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hrjr"]
+bg_color = Color(0.6, 0.6, 0.6, 0.498039)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77ocf"]
+bg_color = Color(0.313726, 0.654902, 0.266667, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 20
+
+[node name="Energy" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_p0goc")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 209.0
+offset_bottom = 7.0
+theme_override_styles/background = SubResource("StyleBoxFlat_7hrjr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_77ocf")
+step = 1.0
+value = 100.0
+rounded = true
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 100.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, 4)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("2_nilqv")

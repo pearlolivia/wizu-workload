@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://x61pq4lhduxd"]
+
+[ext_resource type="Script" path="res://resources/tasks/task.gd" id="1_qxnmc"]
+
+[resource]
+script = ExtResource("1_qxnmc")
+name = "run_code"
+energy = 0
+price = 5

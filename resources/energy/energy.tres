@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Energy" load_steps=2 format=3 uid="uid://cgew3xsq6nd1x"]
+
+[ext_resource type="Script" path="res://resources/energy/energy_resource.gd" id="1_7w560"]
+
+[resource]
+script = ExtResource("1_7w560")
+value = 100
+max_value = 100
