@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Snack" load_steps=4 format=3 uid="uid://d1r3c685pvl7q"]
+
+[ext_resource type="Script" path="res://resources/snacks/snack_resource.gd" id="1_t7pa6"]
+[ext_resource type="Texture2D" uid="uid://di1284kc5udsn" path="res://assets/snacks/apple_0.png" id="2_0hgh2"]
+[ext_resource type="Texture2D" uid="uid://mt26f4lxo508" path="res://assets/snacks/apple_1.png" id="3_bfwds"]
+
+[resource]
+script = ExtResource("1_t7pa6")
+texture = Array[Texture2D]([ExtResource("2_0hgh2"), ExtResource("3_bfwds")])
+name = "apple"
+energy = 4
+points = 1
+money_boost = false
+depletion_boost = false

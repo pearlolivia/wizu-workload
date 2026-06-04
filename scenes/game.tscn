@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=4 uid="uid://7coc0x4jxc7"]
+[gd_scene load_steps=25 format=4 uid="uid://7coc0x4jxc7"]
 
 [ext_resource type="Texture2D" uid="uid://cbb4bj2bq8aph" path="res://assets/office/Room_Builder_Office_16x16.png" id="1_86ibt"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_dv7k1"]
 [ext_resource type="Texture2D" uid="uid://c6ju4faoh7vur" path="res://assets/office/Modern_Office_Black_Shadow.png" id="2_hh1i3"]
 [ext_resource type="PackedScene" uid="uid://d2miiv4xmjir8" path="res://scenes/chair.tscn" id="3_mou70"]
 [ext_resource type="PackedScene" uid="uid://c6uchwou3fvvk" path="res://scenes/player.tscn" id="3_rby7s"]
+[ext_resource type="Script" path="res://scripts/snack_spawner.gd" id="5_3dreo"]
 [ext_resource type="PackedScene" uid="uid://c1awk3ff42vdw" path="res://scenes/energy.tscn" id="5_esiqh"]
 [ext_resource type="PackedScene" uid="uid://b1xsxo50j3wrg" path="res://scenes/desktop.tscn" id="6_mvkdt"]
 
@@ -4279,6 +4280,93 @@ tile_set = SubResource("TileSet_qfbh3")
 [node name="Chair" parent="." instance=ExtResource("3_mou70")]
 position = Vector2(103, 53)
 
+[node name="SnackSpawner" type="Node2D" parent="."]
+script = ExtResource("5_3dreo")
+
+[node name="Timer" type="Timer" parent="SnackSpawner"]
+wait_time = 10.0
+autostart = true
+
+[node name="Markers" type="Node2D" parent="SnackSpawner"]
+
+[node name="Marker" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-56, 55)
+
+[node name="Marker2" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-137, 6)
+
+[node name="Marker3" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-105, 39)
+
+[node name="Marker4" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-136, 86)
+
+[node name="Marker5" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-130, 47)
+
+[node name="Marker6" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-101, 98)
+
+[node name="Marker7" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-125, 117)
+
+[node name="Marker8" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-65, 77)
+
+[node name="Marker9" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-28, 65)
+
+[node name="Marker10" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-39, 88)
+
+[node name="Marker11" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-40, 72)
+
+[node name="Marker12" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(12, 32)
+
+[node name="Marker13" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(35, 57)
+
+[node name="Marker14" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(13, 95)
+
+[node name="Marker15" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(6, 69)
+
+[node name="Marker16" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(45, 9)
+
+[node name="Marker17" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(47, 116)
+
+[node name="Marker18" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(140, 76)
+
+[node name="Marker19" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(115, 14)
+
+[node name="Marker20" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(148, 17)
+
+[node name="Marker21" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(98, 134)
+
+[node name="Marker22" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(121, 169)
+
+[node name="Marker23" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(91, 169)
+
+[node name="Marker24" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(193, 84)
+
+[node name="Marker25" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-92, -6)
+
+[node name="Marker26" type="Marker2D" parent="SnackSpawner/Markers"]
+position = Vector2(-88, 71)
+
 [node name="Player" parent="." instance=ExtResource("3_rby7s")]
 position = Vector2(94, 96)
 
@@ -4328,5 +4416,6 @@ tile_set = SubResource("TileSet_0mup8")
 [node name="ShiftTimer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="timeout" from="SnackSpawner/Timer" to="SnackSpawner" method="_on_timer_timeout"]
 [connection signal="pause_work" from="Player" to="." method="_on_player_pause_work"]
 [connection signal="start_work" from="Player" to="." method="_on_player_start_work"]

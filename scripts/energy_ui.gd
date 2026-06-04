@@ -12,6 +12,8 @@ func _process(delta: float) -> void:
 	energy_left = $Timer.time_left
 	$ProgressBar.value = energy_left
 	energy.set_value(energy_left)
+	if (energy_left == 0):
+		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 
 func update_energy():
 	# realign Timer with new energy value

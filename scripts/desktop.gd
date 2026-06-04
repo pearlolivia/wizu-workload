@@ -5,7 +5,6 @@ func _ready() -> void:
 	$Window.popup_centered()
 	$Window.visible = false
 	$Window.mouse_passthrough = true
-	#$Window.get_close_button().focus_mode = Control.FOCUS_NONE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

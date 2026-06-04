@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nupmawu1ctd7"
-path="res://.godot/imported/Toast.png-188b7d517281e75a5107c6637a11b12c.ctex"
+uid="uid://wy1m6g8nqbtt"
+path="res://.godot/imported/biscuit_0.png-fe78dfd8bcc690a1b04f44e0f7de57c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/snacks/Toast.png"
-dest_files=["res://.godot/imported/Toast.png-188b7d517281e75a5107c6637a11b12c.ctex"]
+source_file="res://assets/snacks/biscuit_0.png"
+dest_files=["res://.godot/imported/biscuit_0.png-fe78dfd8bcc690a1b04f44e0f7de57c6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djuaaal4gag8l"
-path="res://.godot/imported/Banana.png-97aef5c5d209c813b58ff060324d2990.ctex"
+uid="uid://dg0hc62fusvdm"
+path="res://.godot/imported/Quesadilla.png-bbdffa7ab5a505966555c808f11627d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/snacks/Banana.png"
-dest_files=["res://.godot/imported/Banana.png-97aef5c5d209c813b58ff060324d2990.ctex"]
+source_file="res://assets/snacks/Quesadilla.png"
+dest_files=["res://.godot/imported/Quesadilla.png-bbdffa7ab5a505966555c808f11627d7.ctex"]
 
 [params]
 

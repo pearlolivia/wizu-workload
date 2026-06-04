@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u5yd6bhxovh0"
-path="res://.godot/imported/Jasmine Tea.png-933ae0dafc4bd7c2e4779c9ab7777416.ctex"
+uid="uid://brhc5h1txbip5"
+path="res://.godot/imported/Orange.png-8f6878391d72e744ca44f4abe0f19c33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/snacks/Jasmine Tea.png"
-dest_files=["res://.godot/imported/Jasmine Tea.png-933ae0dafc4bd7c2e4779c9ab7777416.ctex"]
+source_file="res://assets/snacks/Orange.png"
+dest_files=["res://.godot/imported/Orange.png-8f6878391d72e744ca44f4abe0f19c33.ctex"]
 
 [params]
 

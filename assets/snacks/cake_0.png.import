@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0m78647efwt8"
-path="res://.godot/imported/Coffee cup.png-b1270747b92ca9b7151aaf264342ad7b.ctex"
+uid="uid://blnktca434jdc"
+path="res://.godot/imported/cake_0.png-a4344102b8d50f754bd1bc8f0431d36e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/snacks/Coffee cup.png"
-dest_files=["res://.godot/imported/Coffee cup.png-b1270747b92ca9b7151aaf264342ad7b.ctex"]
+source_file="res://assets/snacks/cake_0.png"
+dest_files=["res://.godot/imported/cake_0.png-a4344102b8d50f754bd1bc8f0431d36e.ctex"]
 
 [params]
 

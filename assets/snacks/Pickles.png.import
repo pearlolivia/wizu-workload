@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvkeis7pmf1fe"
-path="res://.godot/imported/Hamburger.png-d5abff3b36966b426886ee7e75e62a19.ctex"
+uid="uid://d0cv1a52mubh0"
+path="res://.godot/imported/Pickles.png-bf037b8ecf54afe5a8248f5d202c2023.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/snacks/Hamburger.png"
-dest_files=["res://.godot/imported/Hamburger.png-d5abff3b36966b426886ee7e75e62a19.ctex"]
+source_file="res://assets/snacks/Pickles.png"
+dest_files=["res://.godot/imported/Pickles.png-bf037b8ecf54afe5a8248f5d202c2023.ctex"]
 
 [params]
 

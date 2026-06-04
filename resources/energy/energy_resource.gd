@@ -2,7 +2,7 @@ extends Resource
 
 class_name Energy
 
-@export var value: int = 100
+@export var value: int = 20
 @export var max_value: int = 100
 
 signal update()

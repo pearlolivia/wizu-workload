@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Snack" load_steps=4 format=3 uid="uid://d072r3uxger7j"]
+
+[ext_resource type="Script" path="res://resources/snacks/snack_resource.gd" id="1_f8pty"]
+[ext_resource type="Texture2D" uid="uid://wy1m6g8nqbtt" path="res://assets/snacks/biscuit_0.png" id="2_vsdst"]
+[ext_resource type="Texture2D" uid="uid://wwktahgmoavt" path="res://assets/snacks/biscuit_1.png" id="3_xv7xo"]
+
+[resource]
+script = ExtResource("1_f8pty")
+texture = Array[Texture2D]([ExtResource("2_vsdst"), ExtResource("3_xv7xo")])
+name = "biscuit"
+energy = 8
+points = 1
+money_boost = false
+depletion_boost = false

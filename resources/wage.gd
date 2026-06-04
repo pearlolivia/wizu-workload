@@ -16,3 +16,6 @@ func delete(points: int):
 	else:
 		total = total - points
 	update.emit()
+
+func set_value(points: int):
+	total = points

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wkt433662h3m"
-path="res://.godot/imported/Maki Sushi.png-21ee8f3edef17e90b0b1eb53b1120348.ctex"
+uid="uid://cps5olevl1yos"
+path="res://.godot/imported/orange_1.png-3b9385ec0d6a308b1f81ff8affdbc488.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/snacks/Maki Sushi.png"
-dest_files=["res://.godot/imported/Maki Sushi.png-21ee8f3edef17e90b0b1eb53b1120348.ctex"]
+source_file="res://assets/snacks/orange_1.png"
+dest_files=["res://.godot/imported/orange_1.png-3b9385ec0d6a308b1f81ff8affdbc488.ctex"]
 
 [params]
 

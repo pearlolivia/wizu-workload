@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djuaaal4gag8l"
-path="res://.godot/imported/Banana.png-97aef5c5d209c813b58ff060324d2990.ctex"
+uid="uid://bv68w7ox5fgna"
+path="res://.godot/imported/Espresso.png-6a3c6bc6cbdca7fa88a50a817442f015.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/snacks/Banana.png"
-dest_files=["res://.godot/imported/Banana.png-97aef5c5d209c813b58ff060324d2990.ctex"]
+source_file="res://assets/snacks/Espresso.png"
+dest_files=["res://.godot/imported/Espresso.png-6a3c6bc6cbdca7fa88a50a817442f015.ctex"]
 
 [params]
 

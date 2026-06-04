@@ -1,8 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6we3oo8vkiww"]
+[gd_scene load_steps=8 format=3 uid="uid://b6we3oo8vkiww"]
 
 [ext_resource type="FontFile" uid="uid://bj4hibuj47l47" path="res://assets/ui/Battlenet.ttf" id="1_orlge"]
 [ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_veekb"]
 [ext_resource type="Texture2D" uid="uid://caf7qkyb15057" path="res://assets/ui/yellow_button.png" id="2_obxg7"]
+[ext_resource type="Texture2D" uid="uid://b8g31ypyq6pnx" path="res://assets/ui/banner.png.png" id="3_e8loe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3drq2"]
+texture = ExtResource("2_obxg7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p1raw"]
+texture = ExtResource("2_obxg7")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gk834"]
 texture = ExtResource("2_obxg7")
@@ -17,6 +24,12 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.0745098, 0.45098, 0.505882, 1)
+
+[node name="Highlight2" type="ColorRect" parent="Background"]
+offset_left = 357.0
+offset_top = 110.0
+offset_right = 765.0
+offset_bottom = 182.0
 
 [node name="Title" type="ColorRect" parent="Background"]
 layout_mode = 0
@@ -41,9 +54,35 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_orlge")
 theme_override_font_sizes/font_size = 72
-text = "RESULTS"
+text = "PAYSLIP"
+
+[node name="Achievement" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 193.0
+offset_right = 868.0
+offset_bottom = 284.0
+texture = ExtResource("3_e8loe")
+
+[node name="Label" type="Label" parent="Background/Achievement"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 28.0
+offset_right = 86.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("1_orlge")
+theme_override_font_sizes/font_size = 26
+text = "Hustler"
+
+[node name="Highlight" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 207.0
+offset_right = 769.0
+offset_bottom = 480.0
 
 [node name="Results" type="ColorRect" parent="Background"]
+layout_mode = 0
 offset_left = 359.0
 offset_top = 212.0
 offset_right = 769.0
@@ -66,7 +105,7 @@ theme_override_fonts/font = ExtResource("1_orlge")
 theme_override_font_sizes/font_size = 56
 text = "INCOME"
 
-[node name="Label2" type="Label" parent="Background/Results/Income"]
+[node name="Value" type="Label" parent="Background/Results/Income"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("1_orlge")
@@ -75,6 +114,7 @@ text = "999"
 horizontal_alignment = 2
 
 [node name="Tax" type="HBoxContainer" parent="Background/Results"]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 72.0
 offset_right = 391.0
@@ -89,7 +129,7 @@ theme_override_fonts/font = ExtResource("1_orlge")
 theme_override_font_sizes/font_size = 56
 text = "TAX"
 
-[node name="Label2" type="Label" parent="Background/Results/Tax"]
+[node name="Value" type="Label" parent="Background/Results/Tax"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("1_orlge")
@@ -98,6 +138,7 @@ text = "999"
 horizontal_alignment = 2
 
 [node name="Pension" type="HBoxContainer" parent="Background/Results"]
+layout_mode = 0
 offset_left = 33.0
 offset_top = 122.0
 offset_right = 392.0
@@ -112,7 +153,7 @@ theme_override_fonts/font = ExtResource("1_orlge")
 theme_override_font_sizes/font_size = 56
 text = "PENSION"
 
-[node name="Label2" type="Label" parent="Background/Results/Pension"]
+[node name="Value" type="Label" parent="Background/Results/Pension"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("1_orlge")
@@ -121,6 +162,7 @@ text = "999"
 horizontal_alignment = 2
 
 [node name="Net" type="HBoxContainer" parent="Background/Results"]
+layout_mode = 0
 offset_left = 34.0
 offset_top = 194.0
 offset_right = 393.0
@@ -135,7 +177,7 @@ theme_override_fonts/font = ExtResource("1_orlge")
 theme_override_font_sizes/font_size = 56
 text = "NET"
 
-[node name="Label2" type="Label" parent="Background/Results/Net"]
+[node name="Value" type="Label" parent="Background/Results/Net"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("1_orlge")
@@ -166,5 +208,9 @@ offset_bottom = 578.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_orlge")
 theme_override_font_sizes/font_size = 52
+theme_override_styles/hover = SubResource("StyleBoxTexture_3drq2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p1raw")
 theme_override_styles/normal = SubResource("StyleBoxTexture_gk834")
 text = "Restart"
+
+[connection signal="pressed" from="Background/Button" to="." method="_on_button_pressed"]
