@@ -8,15 +8,21 @@ var spawn_points
 var snacks: Array[Snack]
 var _snack_dir := DirAccess.open("res://resources/snacks/")
 
-func _init() -> void:
-	# get all crop items
-	for _file: String in _snack_dir.get_files():
-		if (_file.get_extension() == "tres"):
-			var _item := ResourceLoader.load(_snack_dir.get_current_dir() + "/" + _file)
-			snacks.push_back(_item)
+#func _init() -> void:
+	## get all snack items
+	#for _file: String in _snack_dir.get_files():
+		#if (_file.get_extension() == "tres"):
+			#var _item := ResourceLoader.load(_snack_dir.get_current_dir() + "/" + _file)
+			#snacks.push_back(_item)
 
 func _ready() -> void:
 	spawn_points = $Markers.get_children()
+	$Timer.start(12)
+	# get all snack items
+	for _file: String in _snack_dir.get_files():
+		if (_file.get_extension() == "tres" or _file.get_extension() == "remap"):
+			var _item := ResourceLoader.load(_snack_dir.get_current_dir() + "/" + _file.replace('.remap', ''))
+			snacks.push_back(_item)
 
 func spawn_snack():
 	var marker_idx = rng.randi_range(0, spawn_points.size() - 1)
@@ -24,6 +30,8 @@ func spawn_snack():
 	var snack = snack_scene.instantiate()
 	
 	# randomise snack & add to spawner node
+	print('snacks: ', snacks)
+	print('snacks: ', snacks.size())
 	var snack_idx = rng.randi_range(0, snacks.size() - 1)
 	snack.resource = snacks[snack_idx]
 	add_child(snack)

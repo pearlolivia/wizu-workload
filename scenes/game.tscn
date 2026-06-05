@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://7coc0x4jxc7"]
+[gd_scene load_steps=29 format=4 uid="uid://7coc0x4jxc7"]
 
 [ext_resource type="Texture2D" uid="uid://cbb4bj2bq8aph" path="res://assets/office/Room_Builder_Office_16x16.png" id="1_86ibt"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_dv7k1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/snack_spawner.gd" id="5_3dreo"]
 [ext_resource type="PackedScene" uid="uid://c1awk3ff42vdw" path="res://scenes/energy.tscn" id="5_esiqh"]
 [ext_resource type="PackedScene" uid="uid://b1xsxo50j3wrg" path="res://scenes/desktop.tscn" id="6_mvkdt"]
+[ext_resource type="FontFile" uid="uid://bj4hibuj47l47" path="res://assets/ui/Battlenet.ttf" id="9_j6s01"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ojv5h"]
 texture = ExtResource("1_86ibt")
@@ -259,6 +260,16 @@ texture = ExtResource("2_hh1i3")
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_mt2u3")
+
+[sub_resource type="GDScript" id="GDScript_5ww81"]
+script/source = "extends Control
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdf61"]
+bg_color = Color(0.959514, 0.142268, 0.0624391, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2lni6"]
+bg_color = Color(0.760784, 0.760784, 0.760784, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4s8n"]
 texture = ExtResource("2_hh1i3")
@@ -4284,7 +4295,7 @@ position = Vector2(103, 53)
 script = ExtResource("5_3dreo")
 
 [node name="Timer" type="Timer" parent="SnackSpawner"]
-wait_time = 10.0
+wait_time = 12.0
 autostart = true
 
 [node name="Markers" type="Node2D" parent="SnackSpawner"]
@@ -4384,6 +4395,94 @@ offset_top = -108.0
 offset_right = 192.0
 offset_bottom = 108.0
 
+[node name="Tutorial" type="Control" parent="Player"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -94.0
+offset_top = -96.0
+offset_right = -38.0
+offset_bottom = -39.0
+script = SubResource("GDScript_5ww81")
+
+[node name="ColorRect3" type="ColorRect" parent="Player/Tutorial"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 57.0
+offset_bottom = 58.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Player/Tutorial"]
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 57.0
+color = Color(0.760784, 0.760784, 0.760784, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Player/Tutorial"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 54.0
+offset_bottom = 51.0
+color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Player/Tutorial"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 54.0
+offset_bottom = 6.0
+color = Color(0.0704678, 0, 0.922623, 1)
+
+[node name="Button" type="Button" parent="Player/Tutorial"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 2.0
+offset_right = 53.0
+offset_bottom = 5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_j6s01")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdf61")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2lni6")
+
+[node name="Label2" type="Label" parent="Player/Tutorial/Button"]
+layout_mode = 0
+offset_top = -0.2
+offset_right = 20.0
+offset_bottom = 22.8
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Player/Tutorial"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 59.0
+offset_bottom = 22.0
+scale = Vector2(0.65, 0.65)
+theme_override_colors/font_color = Color(0.239216, 0.823529, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("9_j6s01")
+text = "TUTORIAL"
+
+[node name="Label" type="Label" parent="Player/Tutorial/Label"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 98.0
+offset_bottom = 79.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0.239216, 0.823529, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("9_j6s01")
+text = ">Find your desk
+>Squash bugs
+>Collect snacks to
+re-energise"
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
 
@@ -4419,3 +4518,4 @@ one_shot = true
 [connection signal="timeout" from="SnackSpawner/Timer" to="SnackSpawner" method="_on_timer_timeout"]
 [connection signal="pause_work" from="Player" to="." method="_on_player_pause_work"]
 [connection signal="start_work" from="Player" to="." method="_on_player_start_work"]
+[connection signal="pressed" from="Player/Tutorial/Button" to="." method="_on_button_pressed"]

@@ -58,10 +58,12 @@ func _physics_process(_delta):
 func sit():
 	is_sitting = true
 	self.position = chair.position
+	await get_tree().create_timer(0.5).timeout
 	start_work.emit()
 
 func stand():
+	pause_work.emit()
+	await get_tree().create_timer(0.5).timeout
 	is_sitting = false
 	self.position.x = chair.position.x + 10
 	self.position.y = chair.position.y - 10
-	pause_work.emit()

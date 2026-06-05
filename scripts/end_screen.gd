@@ -2,8 +2,8 @@ extends Control
 
 const taxRate = 0.2
 const pensionRate = 0.05
-const SLACKER_MAX = 10
-const COASTER_MAX = 40
+const SLACKER_MAX = 20
+const COASTER_MAX = 45
 
 @onready var wallet = preload("res://resources/wallet.tres")
 

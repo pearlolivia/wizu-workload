@@ -17,9 +17,6 @@ func spawn_bug():
 	add_child(bug)
 	bug.position = Vector2(random_x, random_y)
 	bug.add_to_group("bugs")
-
-#func _process(delta: float) -> void:
-	#print(get_tree().get_nodes_in_group('bugs').size())
 	
 func _on_timer_timeout() -> void:
 	var new_timeout = rng.randi_range(3, 6)
